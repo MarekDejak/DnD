@@ -19,6 +19,7 @@ public:
     ~MainWindow();
 
 private slots:
+    void editAbilities();
     void editCharacter();
     void deleteCharacter();
     void addNewCharacter();

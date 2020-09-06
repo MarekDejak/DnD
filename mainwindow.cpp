@@ -87,12 +87,17 @@ void MainWindow::setupButtons() {
     connect(m_ui->addCharacterButton, &QPushButton::pressed, this, &MainWindow::addNewCharacter);
     connect(m_ui->removeCharacterButton, &QPushButton::pressed, this, &MainWindow::deleteCharacter);
     connect(m_ui->saveButton, &QPushButton::pressed, this, &MainWindow::writeToFile);
+    connect(m_ui->editAbilitiesButton, &QPushButton::pressed, this, &MainWindow::editAbilities);
 
     loadButtonIcons();
 }
 
 void MainWindow::writeToFile() {
     m_model->writeDataFile();
+}
+
+void MainWindow::editAbilities(){
+    qDebug()<<"editing abilities";
 }
 
 void MainWindow::deleteCharacter() {
