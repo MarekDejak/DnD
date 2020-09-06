@@ -1,0 +1,1599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Card</class>
+ <widget class="QDialog" name="Card">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>778</width>
+    <height>773</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QLabel" name="imieL">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>641</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Showcard Gothic</family>
+     <pointsize>25</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 20pt &quot;Wide Latin&quot;;*/
+color: rgb(255, 255, 127);
+font: 25pt &quot;Showcard Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Imie</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="zawodL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>52</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>zawod</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rasaL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>78</y>
+     <width>241</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>rasa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="wiekL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>104</y>
+     <width>231</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>wiek</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="akrobatykaL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>421</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>Akrobatyka</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="atletykaL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>446</y>
+     <width>101</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>atletyka</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="blokL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>471</y>
+     <width>101</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>blok</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="brakMunL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>496</y>
+     <width>161</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>brak munduru</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="bronDwuL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>521</y>
+     <width>181</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>bron dwureczna</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="celnoscL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>546</y>
+     <width>121</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>celnosc</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ciezkiMunL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>571</y>
+     <width>181</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>ciezki mundur</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="czytanieL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>596</y>
+     <width>181</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>czytanie</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="dlugieOstL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>621</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>dlugie ostrza</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="dzidaL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>646</y>
+     <width>81</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>dzida</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="handelL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>671</y>
+     <width>101</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>handel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="iluzjaL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>696</y>
+     <width>91</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>iluzja</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="kierowanieL">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>721</y>
+     <width>231</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/*font: 11pt &quot;Stencil&quot;;*/
+color: rgb(255, 255, 127);
+
+font: 12pt &quot;Cooper Black&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>kierowanie</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="kosmobiologiaL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>395</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>kosmobiologia</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="krotkieOstL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>420</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>krotkie ostrze</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="kutarateL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>445</y>
+     <width>171</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>kutarate/chudo</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lekkiMunL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>470</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>lekki mundur</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lepkieL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>495</y>
+     <width>121</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>lepkie lapy</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="medycynaL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>520</y>
+     <width>121</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>medycyna</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="obslugaCSL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>545</y>
+     <width>241</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>obsluga ciezkiego sprzetu</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="przyczajkaL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>570</y>
+     <width>131</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>przyczajka</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="przywracanieL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>595</y>
+     <width>181</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>przywracanie</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="rozpierduchaL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>620</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>rozpierducha</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="sumoL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>645</y>
+     <width>111</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>sumo</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="transmutacjaL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>670</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>transmutacja</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="zabobonyL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>695</y>
+     <width>121</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>zabobony</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="zlotyJezykL">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>720</y>
+     <width>131</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>zloty jezyk</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="silaL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>192</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>Sila</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="zwinnoscL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>218</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>zwinnosc</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="szybkoscL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>244</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>szybkosc</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="wytrzymaloscL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>270</y>
+     <width>211</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>wytrzymalosc</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="inteligencjaL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>296</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>inteligencja</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="osobowoscL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>322</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>osobowosc</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="szczescieL">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>348</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 13pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>szczescie</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="zdjecieL">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>80</y>
+     <width>401</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>zdjecie</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>150</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Showcard Gothic</family>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 127);
+font: 16pt &quot;Cooper Black&quot;;
+font: 15pt  &quot;Showcard Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Atrybuty</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>380</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Showcard Gothic</family>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 127);
+font: 16pt &quot;Cooper Black&quot;;
+font: 15pt  &quot;Showcard Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Umiejetnosci</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>380</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Showcard Gothic</family>
+     <pointsize>15</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 127);
+font: 16pt &quot;Cooper Black&quot;;
+font: 15pt  &quot;Showcard Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>CZARY</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="czaryL">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>420</y>
+     <width>241</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Cooper Black&quot;;
+color: rgb(255, 255, 127);
+border-color: rgb(255, 255, 127);</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="akrobatykaB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>421</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="atletykaB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>446</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="blokB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>471</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="brakMunB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>496</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="bronDwuB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>521</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="celnoscB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>546</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="ciezkiMunB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>571</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="czytanieB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>596</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="dlugieOstB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>621</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="dzidaB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>646</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="handelB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>671</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="iluzjaB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>696</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="kierowanieB">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>721</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="medycynaB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>520</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="przyczajkaB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>570</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="rozpierduchaB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>620</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="kosmobiologiaB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>395</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="sumoB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>645</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="przywracanieB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>595</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="obslugaCSB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>545</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="krotkieOstB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>420</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="kutarateB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>445</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="lepkieB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>495</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="lekkiMunB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>470</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="zlotyJezykB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>720</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="zabobonyB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>695</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="transmutacjaB">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>670</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>730</y>
+     <width>241</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="lvlUp">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 127);
+
+</string>
+      </property>
+      <property name="text">
+       <string>Lvl up</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="closeButton">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 127);
+
+</string>
+      </property>
+      <property name="text">
+       <string>Zamknij</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -28,6 +28,9 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 
   add_executable(DnD
+    card.cpp
+    card.h
+    card.ui
     character.h
     charactermodel.cpp
     charactermodel.h
@@ -38,8 +41,12 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
     main.cpp
     mainwindow.cpp
     mainwindow.h
-    mainwindow.ui
+    mapa.cpp
+    mapa.h
     resources.qrc
+    selectcharacter.cpp
+    selectcharacter.h
+    selectcharacter.ui
     stringfiltermodel.cpp
     stringfiltermodel.h
   )
