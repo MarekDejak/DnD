@@ -10,6 +10,8 @@
 #include <QFileInfo>
 #include <QMessageBox>
 
+static const QString baseAbilities =
+    "Name,Kutarate,Chudo,Gimnastyka korekcyjna,Polewanie,Praca na wysokosciach,Paszport polsatu";
 static const QString confirmDeletion = "Do you really want to delete '%1'?";
 static const QString defaultfileName = "CharacterSheet.csv";
 static const QString errorMessage =
@@ -48,10 +50,10 @@ void MainWindow::setupModel() {
 }
 
 void MainWindow::generateCSV() {
-    auto file = QFile("CharacterSheet.csv");
+    auto file = QFile(defaultfileName);
     file.resize(0);
     file.open(QIODevice::WriteOnly);
-    file.write("Name,Kutarate,Chudo,Gimnastyka korekcyjna,Polewanie,Praca na wysokosciach,Paszport polsatu");
+    file.write(baseAbilities.toUtf8());
     file.close();
     m_model->setFile(defaultfileName);
 }
