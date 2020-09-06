@@ -141,6 +141,9 @@ void MainWindow::loadButtonIcons() {
     m_ui->addCharacterButton->setIcon(loadIconFromFiles(":/icons/plus_green_%1_%2.png"));
     m_ui->removeCharacterButton->setIcon(loadIconFromFiles(":/icons/delete_red_%1_%2.png"));
     m_ui->editCharacterButton->setIcon(loadIconFromFiles(":/icons/properties_edit_%1_%2.png"));
+    m_ui->saveButton->setIcon(loadIconFromFiles(":/icons/save_%1_%2.png"));
+    m_ui->cancelButton->setIcon(loadIconFromFiles(":/icons/forbidden_%1_%2.png"));
+    m_ui->editAbilitiesButton->setIcon(loadIconFromFiles(":/icons/task_list_properties_%1_%2.png"));
 }
 
 MainWindow::~MainWindow() {
