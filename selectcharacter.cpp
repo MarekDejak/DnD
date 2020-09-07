@@ -8,55 +8,25 @@
 #include "stringfiltermodel.h"
 
 #include <QDebug>
-#include <QFileInfo>
 #include <QMessageBox>
 
-static const QString baseAbilities =
-    "Name,Kutarate,Chudo,Gimnastyka korekcyjna,Polewanie,Praca na wysokosciach,Paszport polsatu";
 static const QString confirmDeletion = "Do you really want to delete '%1'?";
-static const QString defaultfileName = "CharacterSheet.csv";
-static const QString errorMessage =
-    "The following error occured: %1. Do you want to generate an empty 'CharacterSheet.csv'?";
 
-SelectCharacter::SelectCharacter(QWidget* parent) : QWidget(parent), m_ui(new Ui::SelectCharacter) {
+SelectCharacter::SelectCharacter(CharacterModel* model, QWidget* parent)
+    : QWidget(parent), m_ui(new Ui::SelectCharacter), m_model(model) {
     m_ui->setupUi(this);
-    setupModel();
+    setupProxyModels();
     setupViews();
     setupButtons();
 }
 
-void SelectCharacter::setupModel() {
-    m_model = new CharacterModel(this);
-    connect(m_model, &CharacterModel::fatal, this, [=](QString fatal) {
-        QMessageBox::warning(this, "Fatal error", fatal);
-        exit(0);
-    });
-    connect(m_model, &CharacterModel::error, this, [=](QString error) {
-        if (QMessageBox::Yes == QMessageBox::question(this, "Error", errorMessage.arg(error))) {
-            generateCSV();
-        } else {
-            exit(0);
-        }
-    });
-    connect(m_model, &CharacterModel::warning, this,
-            [=](QString warning) { QMessageBox::warning(this, "Warning", warning); });
-    m_model->setFile(defaultfileName);
-
-    m_availableCharactersModel = new StringFilterModel(this);
+void SelectCharacter::setupProxyModels() {
     m_usedCharactersModel = new StringFilterModel(this);
-    m_availableCharactersModel->setSourceModel(m_model);
     m_usedCharactersModel->setSourceModel(m_model);
 
+    m_availableCharactersModel = new StringFilterModel(this);
+    m_availableCharactersModel->setSourceModel(m_model);
     m_availableCharactersModel->setAcceptOnFound(false);
-}
-
-void SelectCharacter::generateCSV() {
-    auto file = QFile(defaultfileName);
-    file.resize(0);
-    file.open(QIODevice::WriteOnly);
-    file.write(baseAbilities.toUtf8());
-    file.close();
-    m_model->setFile(defaultfileName);
 }
 
 void SelectCharacter::setupViews() {

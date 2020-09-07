@@ -15,7 +15,7 @@ class SelectCharacter : public QWidget {
     Q_OBJECT
 
 public:
-    SelectCharacter(QWidget* parent = nullptr);
+    SelectCharacter(CharacterModel* model, QWidget* parent = nullptr);
     ~SelectCharacter();
 
 signals:
@@ -32,9 +32,8 @@ private slots:
 
 private:
     void onStartPressed();
-    void generateCSV();
     void setupViews();
-    void setupModel();
+    void setupProxyModels();
     void setupButtons();
     void loadButtonIcons();
     void updateFilterModels();
