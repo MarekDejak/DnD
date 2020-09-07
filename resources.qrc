@@ -189,5 +189,23 @@
     <file alias="checkmark_green_128_d.png">icons/checkmark_green/checkmark_green_128_d.png</file>
     <file alias="checkmark_green_128_n.png">icons/checkmark_green/checkmark_green_128_n.png</file>
     <file alias="checkmark_green_128_h.png">icons/checkmark_green/checkmark_green_128_h.png</file>
+    <file alias="stop_16_d.png">icons/stop/stop_16_d.png</file>
+    <file alias="stop_16_n.png">icons/stop/stop_16_n.png</file>
+    <file alias="stop_16_h.png">icons/stop/stop_16_h.png</file>
+    <file alias="stop_24_d.png">icons/stop/stop_24_d.png</file>
+    <file alias="stop_24_n.png">icons/stop/stop_24_n.png</file>
+    <file alias="stop_24_h.png">icons/stop/stop_24_h.png</file>
+    <file alias="stop_32_d.png">icons/stop/stop_32_d.png</file>
+    <file alias="stop_32_n.png">icons/stop/stop_32_n.png</file>
+    <file alias="stop_32_h.png">icons/stop/stop_32_h.png</file>
+    <file alias="stop_48_d.png">icons/stop/stop_48_d.png</file>
+    <file alias="stop_48_n.png">icons/stop/stop_48_n.png</file>
+    <file alias="stop_48_h.png">icons/stop/stop_48_h.png</file>
+    <file alias="stop_64_d.png">icons/stop/stop_64_d.png</file>
+    <file alias="stop_64_n.png">icons/stop/stop_64_n.png</file>
+    <file alias="stop_64_h.png">icons/stop/stop_64_h.png</file>
+    <file alias="stop_128_d.png">icons/stop/stop_128_d.png</file>
+    <file alias="stop_128_n.png">icons/stop/stop_128_n.png</file>
+    <file alias="stop_128_h.png">icons/stop/stop_128_h.png</file>
     </qresource>
 </RCC>

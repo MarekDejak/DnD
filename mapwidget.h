@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CharacterInfo.h"
+#include "charactermodel.h"
 #include "mapa.h"
 #include "card.h"
 
@@ -15,14 +16,17 @@ class MapWidget : public QWidget {
     Q_OBJECT
 
 public:
-    explicit MapWidget(QWidget* parent = nullptr);
+    explicit MapWidget(CharacterModel* model, QWidget* parent = nullptr);
     void setCharacterInfo(CharacterInfo info);
     void setPtaszki(Ptaszki input);
 
+signals:
+    void stopPressed();
+
 private:
-private:
-    std::map<QString, QPushButton*> buttonMap;
-    QVBoxLayout* verticalLayout;
+    CharacterModel* m_model;
+    std::map<QString, QPushButton*> m_buttonMap;
+    QVBoxLayout* m_verticalLayout;
     Mapa* m_mapa;
     CharacterInfo m_info;
     Ptaszki m_ptaszki;

@@ -1,25 +1,27 @@
 #include "mapwidget.h"
 
+#include "loadiconfromfiles.h"
+
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QVector>
 
-MapWidget::MapWidget(QWidget* parent) : QWidget(parent) {
+MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), m_model(model) {
     QHBoxLayout* horizontalLayout = new QHBoxLayout(this);
-    verticalLayout = new QVBoxLayout(this);
+    m_verticalLayout = new QVBoxLayout(this);
 
-    QPushButton* buttonPoint = new QPushButton(this);  //
-    buttonPoint->setText("Znacznik");
-    buttonPoint->setStyleSheet(
-        "color: rgb(0, 0, 0);font: 75 9pt "
-        "Berlin Sans FB"
-        "; background-color: rgb(150, 150, 150);");
+    QPushButton* buttonPoint = new QPushButton("Znacznik", this);
+    QPushButton* stopGame = new QPushButton("Stop game", this);
+    stopGame->setIcon(loadIconFromFiles(":/icons/stop_%1_%2.png"));
 
-    verticalLayout->addWidget(buttonPoint);
+    connect(stopGame, &QPushButton::pressed, this, &MapWidget::stopPressed);
+
+    m_verticalLayout->addWidget(buttonPoint);
+    m_verticalLayout->addWidget(stopGame);
 
     m_mapa = new Mapa(this);
     horizontalLayout->addWidget(m_mapa);  // layout glowny (poziomy)
-    horizontalLayout->addLayout(verticalLayout);
+    horizontalLayout->addLayout(m_verticalLayout);
     setLayout(horizontalLayout);
 
     this->setWindowTitle("Mapa");
@@ -66,9 +68,9 @@ void MapWidget::setCharacterInfo(CharacterInfo info) {
                 button->setIcon(ButtonIcon);                      //
                 button->setIconSize(pixmapScaled.rect().size());  //
                 button->setStyleSheet("border: 1px solid black; border-radius: 25px;");
-                verticalLayout->addWidget(button);
+                m_verticalLayout->addWidget(button);
 
-                buttonMap[imie] = button;
+                m_buttonMap[imie] = button;
                 connect(button, &QPushButton::clicked, this, [=]() { onPrzyciskClicked(imie); });  // lambda
             }
         }

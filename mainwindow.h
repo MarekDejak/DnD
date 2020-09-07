@@ -17,6 +17,7 @@ private:
     void setupWindow();
     void setupModel();
     void setupUI();
+    void setupStyleSheets();
 
     CharacterModel* m_model;
 };

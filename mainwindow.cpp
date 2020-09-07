@@ -17,24 +17,26 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     setupWindow();
     setupModel();
     setupUI();
+    setupStyleSheets();
+}
 
-    //    connect(selectChar, &SelectCharacter::selectCharacterFinished, this, [=]() {
-    //        mapa->setCharacterInfo(selectChar->charInfo());
-    //        stackedWidget->setCurrentIndex(1);
-    //    });
+void MainWindow::setupStyleSheets() {
+    setStyleSheet(
+        "QPushButton {color: rgb(0, 0, 0);font: 75 9pt Berlin Sans FB; background-color: rgb(150, 150, 150);}");
 }
 
 void MainWindow::setupUI() {
     QStackedWidget* stackedWidget = new QStackedWidget(this);
 
     SelectCharacter* selectChar = new SelectCharacter(m_model, this);
-    MapWidget* mapa = new MapWidget(this);
+    MapWidget* map = new MapWidget(m_model, this);
 
     setCentralWidget(stackedWidget);
     stackedWidget->addWidget(selectChar);
-    stackedWidget->addWidget(mapa);
+    stackedWidget->addWidget(map);
 
     connect(selectChar, &SelectCharacter::startPressed, this, [=]() { stackedWidget->setCurrentIndex(Map); });
+    connect(map, &MapWidget::stopPressed, this, [=]() { stackedWidget->setCurrentIndex(SelectChar); });
 }
 
 void MainWindow::setupWindow() {
