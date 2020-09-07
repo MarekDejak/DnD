@@ -32,17 +32,28 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
     card.h
     card.ui
     character.h
+    characterinfo.h
     charactermodel.cpp
     charactermodel.h
+    createcharacter.cpp
+    createcharacter.h
     editcharacterdialog.cpp
     editcharacterdialog.h
     loadiconfromfiles.cpp
     loadiconfromfiles.h
+    lvl.cpp
+    lvl.h
+    lvl.ui
     main.cpp
     mainwindow.cpp
     mainwindow.h
     mapa.cpp
     mapa.h
+    mapwidget.cpp
+    mapwidget.h
+    player.cpp
+    player.h
+    ptaszki.h
     resources.qrc
     selectcharacter.cpp
     selectcharacter.h

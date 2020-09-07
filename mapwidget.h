@@ -1,5 +1,6 @@
 #pragma once
 
+#include "CharacterInfo.h"
 #include "mapa.h"
 #include "card.h"
 
@@ -10,23 +11,18 @@
 #include <QMap>
 #include <unordered_map>
 
-
-class MapWidget : public QWidget
-{
+class MapWidget : public QWidget {
     Q_OBJECT
 
 public:
-    explicit MapWidget(QWidget *parent = nullptr);
+    explicit MapWidget(QWidget* parent = nullptr);
     void setCharacterInfo(CharacterInfo info);
     void setPtaszki(Ptaszki input);
 
-
 private:
-
 private:
-
     std::map<QString, QPushButton*> buttonMap;
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout* verticalLayout;
     Mapa* m_mapa;
     CharacterInfo m_info;
     Ptaszki m_ptaszki;
@@ -34,7 +30,4 @@ private:
 
 private slots:
     void onPrzyciskClicked(QString imie);
-
-
 };
-

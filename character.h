@@ -1,8 +1,9 @@
 #pragma once
 
 #include <QString>
-#include <map>
 #include <QVariant>
+
+#include <map>
 
 class Character {
 public:

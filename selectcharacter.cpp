@@ -1,5 +1,6 @@
 #include "selectcharacter.h"
-#include "selectcharacter.ui"
+
+#include "ui_selectcharacter.h"
 
 #include "charactermodel.h"
 #include "editcharacterdialog.h"
@@ -18,7 +19,7 @@ static const QString errorMessage =
     "The following error occured: %1. Do you want to generate an empty 'CharacterSheet.csv'?";
 
 SelectCharacter::SelectCharacter(QWidget* parent) : QWidget(parent), m_ui(new Ui::SelectCharacter) {
-    setupWindow();
+    m_ui->setupUi(this);
     setupModel();
     setupViews();
     setupButtons();
@@ -72,12 +73,6 @@ void SelectCharacter::setupViews() {
 
     connect(m_ui->availableCharactersListView, &QListView::doubleClicked, this, &SelectCharacter::editCharacter);
     connect(m_ui->usedCharactersListView, &QListView::doubleClicked, this, &SelectCharacter::editCharacter);
-}
-
-void SelectCharacter::setupWindow() {
-    m_ui->setupUi(this);
-    setWindowTitle("DnD");
-    setWindowIcon(loadIconFromFiles(":/icons/task_list_edit_%1_%2.png"));
 }
 
 void SelectCharacter::setupButtons() {

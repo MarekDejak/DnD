@@ -31,7 +31,6 @@ private:
     void generateCSV();
     void setupViews();
     void setupModel();
-    void setupWindow();
     void setupButtons();
     void loadButtonIcons();
     void updateFilterModels();
