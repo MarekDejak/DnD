@@ -83,6 +83,7 @@ void SelectCharacter::setupButtons() {
     connect(m_ui->removeCharacterButton, &QPushButton::pressed, this, &SelectCharacter::deleteCharacter);
     connect(m_ui->saveButton, &QPushButton::pressed, this, &SelectCharacter::writeToFile);
     connect(m_ui->editAbilitiesButton, &QPushButton::pressed, this, &SelectCharacter::editAbilities);
+    connect(m_ui->startButton, &QPushButton::pressed, this, &SelectCharacter::startPressed);
 
     loadButtonIcons();
 }
@@ -144,7 +145,7 @@ void SelectCharacter::loadButtonIcons() {
     m_ui->removeCharacterButton->setIcon(loadIconFromFiles(":/icons/delete_red_%1_%2.png"));
     m_ui->editCharacterButton->setIcon(loadIconFromFiles(":/icons/properties_edit_%1_%2.png"));
     m_ui->saveButton->setIcon(loadIconFromFiles(":/icons/save_%1_%2.png"));
-    m_ui->cancelButton->setIcon(loadIconFromFiles(":/icons/forbidden_%1_%2.png"));
+    m_ui->startButton->setIcon(loadIconFromFiles(":/icons/checkmark_green_%1_%2.png"));
     m_ui->editAbilitiesButton->setIcon(loadIconFromFiles(":/icons/task_list_properties_%1_%2.png"));
 }
 

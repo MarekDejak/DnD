@@ -1,4 +1,31 @@
 <RCC>
+    <qresource prefix="/gifs">
+        <file>images/bombaGif.gif</file>
+        <file>images/bombastrzela.gif</file>
+        <file>images/bombapluje.gif</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>images/bomba.jpg</file>
+        <file>images/Kuba.png</file>
+        <file>images/pionekDonVasyl.png</file>
+        <file>images/pionekDuszan.png</file>
+        <file>images/pionekEdek.png</file>
+        <file>images/pionekJapa.png</file>
+        <file>images/pionekKacper.png</file>
+        <file>images/pionekKurvinox.png</file>
+        <file>images/pionekMaria.png</file>
+        <file>images/pionekPio.png</file>
+        <file>images/przyciskDonVasyl.png</file>
+        <file>images/przyciskDuszan.png</file>
+        <file>images/przyciskEdek.png</file>
+        <file>images/przyciskJapa.png</file>
+        <file>images/przyciskKacper.png</file>
+        <file>images/przyciskKurvinox.png</file>
+        <file>images/przyciskMaria.png</file>
+        <file>images/background.png</file>
+        <file>images/tlo1.jpg</file>
+        <file>images/przyciskPio.png</file>
+    </qresource>
     <qresource prefix="/icons">
     <file alias="simple_arrow_left_green_16_d.png">icons/simple_arrow_left_green/simple_arrow_left_green_16_d.png</file>
     <file alias="simple_arrow_left_green_16_n.png">icons/simple_arrow_left_green/simple_arrow_left_green_16_n.png</file>
@@ -144,23 +171,23 @@
     <file alias="task_list_properties_128_d.png">icons/task_list_properties/task_list_properties_128_d.png</file>
     <file alias="task_list_properties_128_n.png">icons/task_list_properties/task_list_properties_128_n.png</file>
     <file alias="task_list_properties_128_h.png">icons/task_list_properties/task_list_properties_128_h.png</file>
-    <file alias="forbidden_16_d.png">icons/forbidden/forbidden_16_d.png</file>
-    <file alias="forbidden_16_n.png">icons/forbidden/forbidden_16_n.png</file>
-    <file alias="forbidden_16_h.png">icons/forbidden/forbidden_16_h.png</file>
-    <file alias="forbidden_24_d.png">icons/forbidden/forbidden_24_d.png</file>
-    <file alias="forbidden_24_n.png">icons/forbidden/forbidden_24_n.png</file>
-    <file alias="forbidden_24_h.png">icons/forbidden/forbidden_24_h.png</file>
-    <file alias="forbidden_32_d.png">icons/forbidden/forbidden_32_d.png</file>
-    <file alias="forbidden_32_n.png">icons/forbidden/forbidden_32_n.png</file>
-    <file alias="forbidden_32_h.png">icons/forbidden/forbidden_32_h.png</file>
-    <file alias="forbidden_48_d.png">icons/forbidden/forbidden_48_d.png</file>
-    <file alias="forbidden_48_n.png">icons/forbidden/forbidden_48_n.png</file>
-    <file alias="forbidden_48_h.png">icons/forbidden/forbidden_48_h.png</file>
-    <file alias="forbidden_64_d.png">icons/forbidden/forbidden_64_d.png</file>
-    <file alias="forbidden_64_n.png">icons/forbidden/forbidden_64_n.png</file>
-    <file alias="forbidden_64_h.png">icons/forbidden/forbidden_64_h.png</file>
-    <file alias="forbidden_128_d.png">icons/forbidden/forbidden_128_d.png</file>
-    <file alias="forbidden_128_n.png">icons/forbidden/forbidden_128_n.png</file>
-    <file alias="forbidden_128_h.png">icons/forbidden/forbidden_128_h.png</file>
+    <file alias="checkmark_green_16_d.png">icons/checkmark_green/checkmark_green_16_d.png</file>
+    <file alias="checkmark_green_16_n.png">icons/checkmark_green/checkmark_green_16_n.png</file>
+    <file alias="checkmark_green_16_h.png">icons/checkmark_green/checkmark_green_16_h.png</file>
+    <file alias="checkmark_green_24_d.png">icons/checkmark_green/checkmark_green_24_d.png</file>
+    <file alias="checkmark_green_24_n.png">icons/checkmark_green/checkmark_green_24_n.png</file>
+    <file alias="checkmark_green_24_h.png">icons/checkmark_green/checkmark_green_24_h.png</file>
+    <file alias="checkmark_green_32_d.png">icons/checkmark_green/checkmark_green_32_d.png</file>
+    <file alias="checkmark_green_32_n.png">icons/checkmark_green/checkmark_green_32_n.png</file>
+    <file alias="checkmark_green_32_h.png">icons/checkmark_green/checkmark_green_32_h.png</file>
+    <file alias="checkmark_green_48_d.png">icons/checkmark_green/checkmark_green_48_d.png</file>
+    <file alias="checkmark_green_48_n.png">icons/checkmark_green/checkmark_green_48_n.png</file>
+    <file alias="checkmark_green_48_h.png">icons/checkmark_green/checkmark_green_48_h.png</file>
+    <file alias="checkmark_green_64_d.png">icons/checkmark_green/checkmark_green_64_d.png</file>
+    <file alias="checkmark_green_64_n.png">icons/checkmark_green/checkmark_green_64_n.png</file>
+    <file alias="checkmark_green_64_h.png">icons/checkmark_green/checkmark_green_64_h.png</file>
+    <file alias="checkmark_green_128_d.png">icons/checkmark_green/checkmark_green_128_d.png</file>
+    <file alias="checkmark_green_128_n.png">icons/checkmark_green/checkmark_green_128_n.png</file>
+    <file alias="checkmark_green_128_h.png">icons/checkmark_green/checkmark_green_128_h.png</file>
     </qresource>
 </RCC>

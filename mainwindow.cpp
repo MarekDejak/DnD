@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     stackedWidget->addWidget(selectChar);
     stackedWidget->addWidget(mapa);
 
+    connect(selectChar, &SelectCharacter::startPressed, this, [=]() { stackedWidget->setCurrentIndex(Map); });
     //    connect(selectChar, &SelectCharacter::closeApplication, this, [=]() { exit(0); });
 
     //    connect(selectChar, &SelectCharacter::selectCharacterFinished, this, [=]() {

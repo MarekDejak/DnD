@@ -18,6 +18,9 @@ public:
     SelectCharacter(QWidget* parent = nullptr);
     ~SelectCharacter();
 
+signals:
+    void startPressed();
+
 private slots:
     void editAbilities();
     void editCharacter();
@@ -28,6 +31,7 @@ private slots:
     void writeToFile();
 
 private:
+    void onStartPressed();
     void generateCSV();
     void setupViews();
     void setupModel();
