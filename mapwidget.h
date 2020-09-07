@@ -26,8 +26,8 @@ signals:
 private:
     void onDataChanged();
 
+    QVector<QPushButton*> m_buttons;
     CharacterModel* m_model;
-    std::map<QString, QPushButton*> m_buttonMap;
     QVBoxLayout* m_verticalLayout;
     Mapa* m_mapa;
     CharacterInfo m_info;

@@ -55,24 +55,19 @@ void MapWidget::setPtaszki(Ptaszki input) {
 }
 
 void MapWidget::onDataChanged() {
+    for (auto* button : m_buttons) {
+        m_verticalLayout->removeWidget(button);
+        delete button;
+    }
     for (int i = 0; i < m_model->rowCount(); i++) {
-        const QString name = m_model->data(m_model->index(i, 0)).toString();
-
-        /* for (int j = 0; j < info.amtOfCharacters; j++) {
-             if (imie == info.characters[j].getName()) {  ////////////////////////////////// tworzenie przycisku postaci
-                 QPushButton* button = new QPushButton(this);  //
-                 QPixmap pixmap(info.characters[j].getPathPrzycisk());
-                 QPixmap pixmapScaled = pixmap.scaledToHeight(70, Qt::SmoothTransformation);
-                 QIcon ButtonIcon(pixmapScaled);                   //
-                 button->setIcon(ButtonIcon);                      //
-                 button->setIconSize(pixmapScaled.rect().size());  //
-                 button->setStyleSheet("border: 1px solid black; border-radius: 25px;");
-                 m_verticalLayout->addWidget(button);
-
-                 m_buttonMap[imie] = button;
-                 connect(button, &QPushButton::clicked, this, [=]() { onPrzyciskClicked(imie); });  // lambda
-             }
-         }*/
+        if (m_model->data(m_model->index(i, 0), CharacterModel::UsedRole).toBool()) {
+            const QString name = m_model->data(m_model->index(i, 0)).toString();
+            QPushButton* button = new QPushButton(name, this);
+            button->setStyleSheet("border: 1px solid black; border-radius: 25px;");
+            connect(button, &QPushButton::clicked, this, [=]() { onPrzyciskClicked(name); });
+            m_buttons.push_back(button);
+            m_verticalLayout->addWidget(button);
+        }
     }
 }
 
@@ -93,7 +88,6 @@ void MapWidget::setCharacterInfo(CharacterInfo info) {
                 button->setStyleSheet("border: 1px solid black; border-radius: 25px;");
                 m_verticalLayout->addWidget(button);
 
-                m_buttonMap[imie] = button;
                 connect(button, &QPushButton::clicked, this, [=]() { onPrzyciskClicked(imie); });  // lambda
             }
         }

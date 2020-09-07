@@ -14,8 +14,3 @@ bool UsedFilterModel::filterAcceptsRow(int sourceRow, const QModelIndex& sourceP
 
     return m_acceptOnFound ? entryUsed : !entryUsed;
 }
-
-void UsedFilterModel::setFilterStringList(QStringList stringList) {
-    m_stringList = stringList;
-    invalidateFilter();
-}
