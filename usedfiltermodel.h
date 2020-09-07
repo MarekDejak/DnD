@@ -2,9 +2,9 @@
 
 #include <QSortFilterProxyModel>
 
-class StringFilterModel : public QSortFilterProxyModel {
+class UsedFilterModel : public QSortFilterProxyModel {
 public:
-    StringFilterModel(QObject* parent);
+    UsedFilterModel(QObject* parent);
 
     void setAcceptOnFound(bool accept);
     void setFilterStringList(QStringList stringList);

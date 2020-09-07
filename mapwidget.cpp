@@ -7,6 +7,7 @@
 #include <QVector>
 
 MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), m_model(model) {
+    connect(m_model, &QAbstractItemModel::dataChanged, this, &MapWidget::onDataChanged);
     QHBoxLayout* horizontalLayout = new QHBoxLayout(this);
     m_verticalLayout = new QVBoxLayout(this);
 
@@ -51,6 +52,28 @@ void MapWidget::onPrzyciskClicked(QString imie) {
 
 void MapWidget::setPtaszki(Ptaszki input) {
     m_ptaszki = input;
+}
+
+void MapWidget::onDataChanged() {
+    for (int i = 0; i < m_model->rowCount(); i++) {
+        const QString name = m_model->data(m_model->index(i, 0)).toString();
+
+        /* for (int j = 0; j < info.amtOfCharacters; j++) {
+             if (imie == info.characters[j].getName()) {  ////////////////////////////////// tworzenie przycisku postaci
+                 QPushButton* button = new QPushButton(this);  //
+                 QPixmap pixmap(info.characters[j].getPathPrzycisk());
+                 QPixmap pixmapScaled = pixmap.scaledToHeight(70, Qt::SmoothTransformation);
+                 QIcon ButtonIcon(pixmapScaled);                   //
+                 button->setIcon(ButtonIcon);                      //
+                 button->setIconSize(pixmapScaled.rect().size());  //
+                 button->setStyleSheet("border: 1px solid black; border-radius: 25px;");
+                 m_verticalLayout->addWidget(button);
+
+                 m_buttonMap[imie] = button;
+                 connect(button, &QPushButton::clicked, this, [=]() { onPrzyciskClicked(imie); });  // lambda
+             }
+         }*/
+    }
 }
 
 void MapWidget::setCharacterInfo(CharacterInfo info) {

@@ -58,7 +58,7 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
     selectcharacter.cpp
     selectcharacter.h
     selectcharacter.ui
-    stringfiltermodel.cpp
-    stringfiltermodel.h
+    usedfiltermodel.cpp
+    usedfiltermodel.h
   )
 target_link_libraries(DnD PRIVATE Qt5::Widgets)

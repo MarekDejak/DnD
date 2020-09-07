@@ -5,7 +5,7 @@
 #include "charactermodel.h"
 #include "editcharacterdialog.h"
 #include "loadiconfromfiles.h"
-#include "stringfiltermodel.h"
+#include "usedfiltermodel.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -21,10 +21,10 @@ SelectCharacter::SelectCharacter(CharacterModel* model, QWidget* parent)
 }
 
 void SelectCharacter::setupProxyModels() {
-    m_usedCharactersModel = new StringFilterModel(this);
+    m_usedCharactersModel = new UsedFilterModel(this);
     m_usedCharactersModel->setSourceModel(m_model);
 
-    m_availableCharactersModel = new StringFilterModel(this);
+    m_availableCharactersModel = new UsedFilterModel(this);
     m_availableCharactersModel->setSourceModel(m_model);
     m_availableCharactersModel->setAcceptOnFound(false);
 }
@@ -83,29 +83,23 @@ void SelectCharacter::addNewCharacter() {
 void SelectCharacter::editCharacter() {
     const auto selection = m_currentListView->selectionModel()->selection();
     if (selection.count() == 1) {
-        new EditCharacterDialog(selection.indexes().first().data(Qt::UserRole).value<Character*>(), this);
+        new EditCharacterDialog(selection.indexes().first().data(CharacterModel::CharacterRole).value<Character*>(),
+                                this);
     }
 }
 
 void SelectCharacter::addCharacterToUsed() {
     const auto selection = m_ui->availableCharactersListView->selectionModel()->selection();
     if (selection.count() == 1) {
-        m_usedCharacters.push_back(selection.indexes().first().data().toString());
+        m_availableCharactersModel->setData(selection.indexes().first(), true, CharacterModel::UsedRole);
     }
-    updateFilterModels();
 }
 
 void SelectCharacter::removeCharacterFromUsed() {
     const auto selection = m_ui->usedCharactersListView->selectionModel()->selection();
     if (selection.count() == 1) {
-        m_usedCharacters.removeOne(selection.indexes().first().data().toString());
+        m_usedCharactersModel->setData(selection.indexes().first(), false, CharacterModel::UsedRole);
     }
-    updateFilterModels();
-}
-
-void SelectCharacter::updateFilterModels() {
-    m_usedCharactersModel->setFilterStringList(m_usedCharacters);
-    m_availableCharactersModel->setFilterStringList(m_usedCharacters);
 }
 
 void SelectCharacter::loadButtonIcons() {

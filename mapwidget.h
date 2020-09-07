@@ -24,6 +24,8 @@ signals:
     void stopPressed();
 
 private:
+    void onDataChanged();
+
     CharacterModel* m_model;
     std::map<QString, QPushButton*> m_buttonMap;
     QVBoxLayout* m_verticalLayout;

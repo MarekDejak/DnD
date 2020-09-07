@@ -8,7 +8,7 @@ class SelectCharacter;
 }
 QT_END_NAMESPACE
 class CharacterModel;
-class StringFilterModel;
+class UsedFilterModel;
 class QListView;
 
 class SelectCharacter : public QWidget {
@@ -41,7 +41,7 @@ private:
     Ui::SelectCharacter* m_ui;
     QStringList m_usedCharacters;
     CharacterModel* m_model;
-    StringFilterModel* m_usedCharactersModel;
-    StringFilterModel* m_availableCharactersModel;
+    UsedFilterModel* m_usedCharactersModel;
+    UsedFilterModel* m_availableCharactersModel;
     QListView* m_currentListView;
 };

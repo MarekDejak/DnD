@@ -45,6 +45,7 @@ void CharacterModel::emitWarningAndDeleteCharacter(Character* character) {
 }
 
 void CharacterModel::parseDataFile() {
+    beginResetModel();
     QTextStream in(&m_dataFile);
     const QString headerLine = in.readLine();
     if (headerLine.isNull()) {
@@ -77,6 +78,7 @@ void CharacterModel::parseDataFile() {
         m_characters.push_back(character);
         line = in.readLine();
     }
+    endResetModel();
 }
 
 void CharacterModel::writeDataFile() {
@@ -146,8 +148,19 @@ QVariant CharacterModel::data(const QModelIndex& index, int role) const {
         } else {
             return m_characters.at(index.row())->getAbility(m_skills.at(index.column() - 1));
         }
-    } else if (role == Qt::UserRole) {
+    } else if (role == CharacterRole) {
         return QVariant::fromValue(m_characters.at(index.row()));
+    } else if (role == UsedRole) {
+        return m_characters.at(index.row())->used();
     }
     return QVariant();
+}
+
+bool CharacterModel::setData(const QModelIndex& index, const QVariant& value, int role) {
+    if (role == UsedRole) {
+        m_characters.at(index.row())->setUsed(value.toBool());
+        emit dataChanged(index, index);
+        return true;
+    }
+    return false;
 }
