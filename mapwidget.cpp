@@ -59,6 +59,7 @@ void MapWidget::onDataChanged() {
         m_verticalLayout->removeWidget(button);
         delete button;
     }
+    m_buttons.clear();
     for (int i = 0; i < m_model->rowCount(); i++) {
         if (m_model->data(m_model->index(i, 0), CharacterModel::UsedRole).toBool()) {
             const QString name = m_model->data(m_model->index(i, 0)).toString();
