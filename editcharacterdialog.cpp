@@ -3,11 +3,12 @@
 #include <QDialogButtonBox>
 #include <QLineEdit>
 #include <QSpinBox>
+#include <QLabel>
 
 QVector<Character*> EditCharacterDialog::m_openCharacters = {};
 
-EditCharacterDialog::EditCharacterDialog(Character* character, QWidget* parent)
-    : QDialog(parent), m_character(character) {
+EditCharacterDialog::EditCharacterDialog(bool editable, Character* character, QWidget* parent)
+    : QDialog(parent), m_character(character), m_editable(editable) {
     manageOpenDialogs();
     setupTitleAndGeometry();
     populateLayout();
@@ -17,18 +18,30 @@ EditCharacterDialog::EditCharacterDialog(Character* character, QWidget* parent)
 void EditCharacterDialog::populateLayout() {
     auto* formLayout = new QFormLayout(this);
 
-    auto* nameEdit = new QLineEdit(this);
-    nameEdit->setText(m_character->name());
-    formLayout->addRow("Name", nameEdit);
-    connect(nameEdit, &QLineEdit::editingFinished, this, [=]() { m_character->setName(nameEdit->text()); });
+    if (m_editable) {
+        auto* nameEdit = new QLineEdit(this);
+        nameEdit->setText(m_character->name());
+        formLayout->addRow("Name", nameEdit);
+        connect(nameEdit, &QLineEdit::editingFinished, this, [=]() { m_character->setName(nameEdit->text()); });
 
-    for (const auto [ability, value] : m_character->getAllAbilities()) {
-        auto* spinBox = new QSpinBox(this);
-        spinBox->setValue(value);
-        const auto abilityName = ability;
-        connect(spinBox, &QSpinBox::editingFinished, this,
-                [=]() { m_character->setAbility(abilityName, spinBox->value()); });
-        formLayout->addRow(ability, spinBox);
+        for (const auto [ability, value] : m_character->getAllAbilities()) {
+            auto* spinBox = new QSpinBox(this);
+            spinBox->setValue(value);
+            const auto abilityName = ability;
+            connect(spinBox, &QSpinBox::editingFinished, this,
+                    [=]() { m_character->setAbility(abilityName, spinBox->value()); });
+            formLayout->addRow(ability, spinBox);
+        }
+    } else {
+        auto* label = new QLabel(this);
+        label->setText(m_character->name());
+        formLayout->addRow(label);
+
+        for (const auto [ability, value] : m_character->getAllAbilities()) {
+            auto* label = new QLabel(this);
+            label->setText(QString::number(value));
+            formLayout->addRow(ability, label);
+        }
     }
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok, this);

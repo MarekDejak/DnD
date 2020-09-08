@@ -17,7 +17,6 @@ class MapWidget : public QWidget {
 
 public:
     explicit MapWidget(CharacterModel* model, QWidget* parent = nullptr);
-    void setCharacterInfo(CharacterInfo info);
     void setPtaszki(Ptaszki input);
 
 signals:
@@ -35,5 +34,5 @@ private:
     QVector<QString> m_openCards;
 
 private slots:
-    void onPrzyciskClicked(QString imie);
+    void onPrzyciskClicked(const QModelIndex& imie);
 };

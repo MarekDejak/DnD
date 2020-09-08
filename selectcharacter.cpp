@@ -83,8 +83,8 @@ void SelectCharacter::addNewCharacter() {
 void SelectCharacter::editCharacter() {
     const auto selection = m_currentListView->selectionModel()->selection();
     if (selection.count() == 1) {
-        new EditCharacterDialog(selection.indexes().first().data(CharacterModel::CharacterRole).value<Character*>(),
-                                this);
+        new EditCharacterDialog(
+            true, selection.indexes().first().data(CharacterModel::CharacterRole).value<Character*>(), this);
     }
 }
 

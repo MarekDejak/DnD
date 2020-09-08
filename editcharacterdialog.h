@@ -7,13 +7,14 @@
 
 class EditCharacterDialog : public QDialog {
 public:
-    EditCharacterDialog(Character* character, QWidget* parent);
+    EditCharacterDialog(bool editable, Character* character, QWidget* parent);
 
 private:
     void populateLayout();
     void manageOpenDialogs();
     void setupTitleAndGeometry();
 
+    bool m_editable;
     Character* m_character;
     static QVector<Character*> m_openCharacters;
 };
