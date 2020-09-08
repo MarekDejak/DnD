@@ -3,6 +3,9 @@
 #include <QTextStream>
 #include <QWidget>
 
+static const int buttonImageHeight = 100;
+static const QString buttonImagePath = "images/%1_button.png";
+static const QString pawnImagePath = "images/%1_pawn.png";
 static const QString nameLabel = "Name";
 static const QString incorrectFileFormat = "Incorrect file format";
 static const QString fileNotFound = "'CharacterSheet.csv' does not exist";
@@ -152,6 +155,12 @@ QVariant CharacterModel::data(const QModelIndex& index, int role) const {
         return QVariant::fromValue(m_characters.at(index.row()));
     } else if (role == UsedRole) {
         return m_characters.at(index.row())->used();
+    } else if (role == ButtonImageRole) {
+        const QString name = m_characters.at(index.row())->name().replace(" ", "");
+        return QPixmap(buttonImagePath.arg(name)).scaledToHeight(buttonImageHeight, Qt::SmoothTransformation);
+    } else if (role == PawnImageRole) {
+        const QString name = m_characters.at(index.row())->name().replace(" ", "");
+        return QPixmap(pawnImagePath.arg(name)).scaledToHeight(70, Qt::SmoothTransformation);
     }
     return QVariant();
 }

@@ -6,25 +6,8 @@
     </qresource>
     <qresource prefix="/images">
         <file>images/bomba.jpg</file>
-        <file>images/Kuba.png</file>
-        <file>images/pionekDonVasyl.png</file>
-        <file>images/pionekDuszan.png</file>
-        <file>images/pionekEdek.png</file>
-        <file>images/pionekJapa.png</file>
-        <file>images/pionekKacper.png</file>
-        <file>images/pionekKurvinox.png</file>
-        <file>images/pionekMaria.png</file>
-        <file>images/pionekPio.png</file>
-        <file>images/przyciskDonVasyl.png</file>
-        <file>images/przyciskDuszan.png</file>
-        <file>images/przyciskEdek.png</file>
-        <file>images/przyciskJapa.png</file>
-        <file>images/przyciskKacper.png</file>
-        <file>images/przyciskKurvinox.png</file>
-        <file>images/przyciskMaria.png</file>
         <file>images/background.png</file>
         <file>images/tlo1.jpg</file>
-        <file>images/przyciskPio.png</file>
     </qresource>
     <qresource prefix="/icons">
     <file alias="simple_arrow_left_green_16_d.png">icons/simple_arrow_left_green/simple_arrow_left_green_16_d.png</file>

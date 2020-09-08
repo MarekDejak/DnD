@@ -63,7 +63,14 @@ void MapWidget::onDataChanged() {
     for (int i = 0; i < m_model->rowCount(); i++) {
         if (m_model->data(m_model->index(i, 0), CharacterModel::UsedRole).toBool()) {
             const QString name = m_model->data(m_model->index(i, 0)).toString();
-            QPushButton* button = new QPushButton(name, this);
+            QPushButton* button = new QPushButton(this);
+            const auto pixmap = m_model->data(m_model->index(i, 0), CharacterModel::ButtonImageRole).value<QPixmap>();
+            if (!pixmap.isNull()) {
+                button->setIconSize(pixmap.rect().size());
+                button->setIcon(pixmap);
+            } else {
+                button->setText(name);
+            }
             button->setStyleSheet("border: 1px solid black; border-radius: 25px;");
             connect(button, &QPushButton::clicked, this, [=]() { onPrzyciskClicked(name); });
             m_buttons.push_back(button);

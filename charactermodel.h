@@ -23,7 +23,7 @@ public:
 
     void setFile(QString fileName);
 
-    enum Roles { CharacterRole = Qt::UserRole, UsedRole };
+    enum Roles { CharacterRole = Qt::UserRole, UsedRole, PawnImageRole, ButtonImageRole };
 public slots:
     void writeDataFile();
 
