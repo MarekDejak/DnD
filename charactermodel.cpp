@@ -115,6 +115,8 @@ void CharacterModel::writeDataFile() {
 
     m_dataFile.resize(0);
     m_dataFile.write(output.toUtf8());
+    m_dataFile.close();
+    openFile();
 }
 
 int CharacterModel::rowCount(const QModelIndex& parent) const {
