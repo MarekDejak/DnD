@@ -6,7 +6,6 @@
 static const int buttonImageHeight = 100;
 static const QString buttonImagePath = "images/%1_button.png";
 static const QString pawnImagePath = "images/%1_pawn.png";
-static const QString nameLabel = "Name";
 static const QString incorrectFileFormat = "Incorrect file format";
 static const QString fileNotFound = "'CharacterSheet.csv' does not exist";
 static const QString fileUsed = "'CharacterSheet.csv' is currently being used by another program";
@@ -47,6 +46,16 @@ void CharacterModel::emitWarningAndDeleteCharacter(Character* character) {
     delete character;
 }
 
+std::tuple<QString, QString, QString> CharacterModel::parseFixedColumns(QStringList& values) {
+    if (values.count() < FixedColumnCount) {
+        emit error(incorrectFileFormat);
+    }
+    const QString name = values.takeFirst();
+    const QString race = values.takeFirst();
+    const QString profession = values.takeFirst();
+    return {name, race, profession};
+}
+
 void CharacterModel::parseDataFile() {
     beginResetModel();
     QTextStream in(&m_dataFile);
@@ -55,7 +64,8 @@ void CharacterModel::parseDataFile() {
         emit error(incorrectFileFormat);
     }
     QStringList skills = headerLine.split(",");
-    if (skills.takeFirst() != nameLabel) {
+    const auto [name, race, profession] = parseFixedColumns(skills);
+    if (name != nameLabel || race != raceLabel || profession != professionLabel) {
         emit error(incorrectFileFormat);
     }
     m_skills = skills;
@@ -63,7 +73,8 @@ void CharacterModel::parseDataFile() {
     QString line = in.readLine();
     while (!line.isNull()) {
         auto values = line.split(",");
-        auto* character = new Character(values.takeFirst());
+        const auto [name, race, profession] = parseFixedColumns(values);
+        auto* character = new Character(name, race, profession);
         if (values.count() != skills.count()) {
             emitWarningAndDeleteCharacter(character);
             line = in.readLine();
@@ -86,11 +97,15 @@ void CharacterModel::parseDataFile() {
 
 void CharacterModel::writeDataFile() {
     QString output;
-    output.push_back("Name,");
+    output.push_back(QString("%1,").arg(nameLabel));
+    output.push_back(QString("%1,").arg(raceLabel));
+    output.push_back(QString("%1,").arg(professionLabel));
     output.append(m_skills.join(","));
     output.push_back("\n");
     for (const auto character : m_characters) {
         output.push_back(character->name() + ",");
+        output.push_back(character->getRace() + ",");
+        output.push_back(character->getProfession() + ",");
         for (const auto skill : m_skills) {
             output.push_back(QString::number(character->getAbility(skill)) + ",");
         }
@@ -146,10 +161,14 @@ bool CharacterModel::insertRows(int row, int count, const QModelIndex& parent) {
 
 QVariant CharacterModel::data(const QModelIndex& index, int role) const {
     if (role == Qt::DisplayRole) {
-        if (index.column() == 0) {
+        if (index.column() == NameColumn) {
             return m_characters.at(index.row())->name();
+        } else if (index.column() == RaceColumn) {
+            return m_characters.at(index.row())->getRace();
+        } else if (index.column() == ProfColumn) {
+            return m_characters.at(index.row())->getProfession();
         } else {
-            return m_characters.at(index.row())->getAbility(m_skills.at(index.column() - 1));
+            return m_characters.at(index.row())->getAbility(m_skills.at(index.column() - FixedColumnCount));
         }
     } else if (role == CharacterRole) {
         return QVariant::fromValue(m_characters.at(index.row()));

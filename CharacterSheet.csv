@@ -1,6 +1,5 @@
-Name,Skill 1,Skill 2,Skill 3,Skill 4,Skill 5,Skill 6
-ojciec pijo,10,20,30,40,50,60
-edek,50,40,30,20,10,0
-kuba,10,10,10,10,10,10
-Character 4,70,70,70,70,70,70
-Character 5,80,80,80,80,80,80
+Name,Race,Profession,Skill 1,Skill 2,Skill 3,Skill 4,Skill 5,Skill 6
+ojciec pijo,rasa,profesja,10,20,30,40,50,60
+edek,rasa,profesja,50,40,30,20,10,0
+kuba,rasa,profesja,10,10,10,10,10,10
+Character 5,rasa,profesja,80,80,80,80,80,80

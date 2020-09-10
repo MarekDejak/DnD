@@ -6,6 +6,10 @@
 #include <QFile>
 #include <QSet>
 
+const QString nameLabel = "Name";
+const QString raceLabel = "Race";
+const QString professionLabel = "Profession";
+
 class CharacterModel : public QAbstractTableModel {
     Q_OBJECT
 public:
@@ -24,6 +28,7 @@ public:
     void setFile(QString fileName);
 
     enum Roles { CharacterRole = Qt::UserRole, UsedRole, PawnImageRole, ButtonImageRole };
+    enum FixedColumns { NameColumn = 0, RaceColumn, ProfColumn, FixedColumnCount };
 public slots:
     void writeDataFile();
 
@@ -33,6 +38,7 @@ signals:
     void warning(QString warning);
 
 private:
+    std::tuple<QString, QString, QString> parseFixedColumns(QStringList& values);
     bool openFile();
     QString getUniqueCharacterName();
     void emitWarningAndDeleteCharacter(Character* character);

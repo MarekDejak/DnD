@@ -10,7 +10,7 @@
 static const QString errorMessage =
     "The following error occured: %1. Do you want to generate an empty 'CharacterSheet.csv'?";
 static const QString defaultAbilities =
-    "Name,Kutarate,Chudo,Gimnastyka korekcyjna,Polewanie,Praca na wysokosciach,Paszport polsatu";
+    "Name,Race,Profession,Kutarate,Chudo,Gimnastyka korekcyjna,Polewanie,Praca na wysokosciach,Paszport polsatu";
 static const QString defaultfileName = "CharacterSheet.csv";
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {

@@ -10,6 +10,8 @@ public:
     EditCharacterDialog(bool editable, Character* character, QWidget* parent);
 
 private:
+    template<class Editor>
+    void generateFixedLayout(QFormLayout* layout);
     void populateLayout();
     void manageOpenDialogs();
     void setupTitleAndGeometry();
