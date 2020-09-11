@@ -13,6 +13,9 @@ public:
     virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
     virtual Qt::ItemFlags flags(const QModelIndex& index) const override;
 
+    void removeSkill(QString skill);
+    void addSkill();
+
 private:
     CharacterModel* m_model;
 };

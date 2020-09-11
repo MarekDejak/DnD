@@ -1,6 +1,6 @@
 #include "editabilitiesdialog.h"
 
-#include <QListView>
+#include <QMessageBox>
 #include <QPushButton>
 #include <QVBoxLayout>
 
@@ -20,10 +20,10 @@ void EditAbilitiesDialog::setupTitleAndGeometry() {
 
 void EditAbilitiesDialog::populateLayout() {
     auto* layout = new QVBoxLayout(this);
-    auto* skillsView = new QListView(this);
-    skillsView->setModel(m_skillsModel);
-    skillsView->setEditTriggers(QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
-    layout->addWidget(skillsView);
+    m_skillsView = new QListView(this);
+    m_skillsView->setModel(m_skillsModel);
+    m_skillsView->setEditTriggers(QAbstractItemView::EditKeyPressed | QAbstractItemView::DoubleClicked);
+    layout->addWidget(m_skillsView);
 
     auto* okButton = new QPushButton("OK", this);
     auto* removeAbilityButton = new QPushButton("Remove ability", this);
@@ -42,9 +42,20 @@ void EditAbilitiesDialog::populateLayout() {
     setLayout(layout);
 }
 
-void EditAbilitiesDialog::removeAbility() {}
+void EditAbilitiesDialog::removeAbility() {
+    const auto selection = m_skillsView->selectionModel()->selection();
+    if (selection.count() == 1) {
+        const auto name = selection.indexes().first().data().toString();
+        if (QMessageBox::Yes ==
+            QMessageBox::question(this, "Confirmation", QString("Do you really want to delete '%1'?").arg(name))) {
+            m_skillsModel->removeSkill(name);
+        }
+    }
+}
 
-void EditAbilitiesDialog::addAbility() {}
+void EditAbilitiesDialog::addAbility() {
+    m_skillsModel->addSkill();
+}
 
 void EditAbilitiesDialog::setupModel(CharacterModel* model) {
     m_skillsModel = new SkillsProxyModel(model, this);

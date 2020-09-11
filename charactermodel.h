@@ -28,7 +28,7 @@ public:
     void setFile(QString fileName);
 
     void editSkill(QString from, QString to);
-    void addSkill(QString skill);
+    void addSkill();
     void removeSkill(QString skill);
 
     enum Roles { CharacterRole = Qt::UserRole, UsedRole, PawnImageRole, ButtonImageRole, SkillsRole };
@@ -45,6 +45,7 @@ private:
     std::tuple<QString, QString, QString> parseFixedColumns(QStringList& values);
     bool openFile();
     QString getUniqueCharacterName();
+    QString getUniqueSkillName();
     void emitWarningAndDeleteCharacter(Character* character);
     void parseDataFile();
 

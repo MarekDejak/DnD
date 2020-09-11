@@ -139,6 +139,16 @@ QString CharacterModel::getUniqueCharacterName() {
     return suggestedName;
 }
 
+QString CharacterModel::getUniqueSkillName() {
+    QString suggestedName = "Skill";
+    for (const auto skill : m_skills) {
+        if (skill == suggestedName) {
+            suggestedName += "1";
+        }
+    }
+    return suggestedName;
+}
+
 bool CharacterModel::removeRows(int row, int count, const QModelIndex& parent) {
     beginResetModel();
     Q_UNUSED(parent);
@@ -201,5 +211,20 @@ void CharacterModel::editSkill(QString from, QString to) {
     m_skills.replace(m_skills.indexOf(from), to);
     for (auto* character : m_characters) {
         character->editAbility(from, to);
+    }
+}
+
+void CharacterModel::removeSkill(QString skill) {
+    m_skills.removeOne(skill);
+    for (auto* character : m_characters) {
+        character->removeAbility(skill);
+    }
+}
+
+void CharacterModel::addSkill() {
+    const auto name = getUniqueSkillName();
+    m_skills.push_back(name);
+    for (auto* character : m_characters) {
+        character->addAbility(name);
     }
 }

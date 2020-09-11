@@ -28,3 +28,15 @@ bool SkillsProxyModel::setData(const QModelIndex& index, const QVariant& value, 
 Qt::ItemFlags SkillsProxyModel::flags(const QModelIndex& index) const {
     return QAbstractListModel::flags(index) | Qt::ItemIsEditable;
 }
+
+void SkillsProxyModel::removeSkill(QString skill) {
+    beginResetModel();
+    m_model->removeSkill(skill);
+    endResetModel();
+}
+
+void SkillsProxyModel::addSkill() {
+    beginResetModel();
+    m_model->addSkill();
+    endResetModel();
+}

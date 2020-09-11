@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QDialog>
+#include <QListView>
 
 #include "charactermodel.h"
 #include "skillsproxymodel.h"
@@ -18,6 +19,7 @@ private:
     void populateLayout();
     void setupModel(CharacterModel* model);
 
+    QListView* m_skillsView;
     SkillsProxyModel* m_skillsModel;
     CharacterModel* m_model;
 };

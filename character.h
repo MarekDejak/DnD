@@ -24,6 +24,8 @@ public:
         handler.key() = to;
         m_abilities.insert(std::move(handler));
     }
+    void removeAbility(QString ability) { m_abilities.erase(m_abilities.find(ability)); }
+    void addAbility(QString ability) { m_abilities[ability] = 0; }
 
     void setRace(QString race) { m_race = race; }
     QString getRace() const { return m_race; }
