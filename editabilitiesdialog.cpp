@@ -35,8 +35,8 @@ void EditAbilitiesDialog::populateLayout() {
 
     QHBoxLayout* buttonLayout = new QHBoxLayout(this);
     buttonLayout->addWidget(okButton);
-    buttonLayout->addWidget(removeAbilityButton);
     buttonLayout->addWidget(addAbilityButton);
+    buttonLayout->addWidget(removeAbilityButton);
 
     layout->addItem(buttonLayout);
     setLayout(layout);
