@@ -126,7 +126,7 @@ int CharacterModel::rowCount(const QModelIndex& parent) const {
 
 int CharacterModel::columnCount(const QModelIndex& parent) const {
     Q_UNUSED(parent);
-    return m_skills.count() + 1;
+    return m_skills.count() + FixedColumnCount;
 }
 
 QString CharacterModel::getUniqueCharacterName() {
@@ -182,6 +182,8 @@ QVariant CharacterModel::data(const QModelIndex& index, int role) const {
     } else if (role == PawnImageRole) {
         const QString name = m_characters.at(index.row())->name().replace(" ", "");
         return QPixmap(pawnImagePath.arg(name)).scaledToHeight(70, Qt::SmoothTransformation);
+    } else if (role == SkillsRole) {
+        return m_skills;
     }
     return QVariant();
 }
@@ -193,4 +195,11 @@ bool CharacterModel::setData(const QModelIndex& index, const QVariant& value, in
         return true;
     }
     return false;
+}
+
+void CharacterModel::editSkill(QString from, QString to) {
+    m_skills.replace(m_skills.indexOf(from), to);
+    for (auto* character : m_characters) {
+        character->editAbility(from, to);
+    }
 }

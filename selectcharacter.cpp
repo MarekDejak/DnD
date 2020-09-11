@@ -3,6 +3,7 @@
 #include "ui_selectcharacter.h"
 
 #include "charactermodel.h"
+#include "editabilitiesdialog.h"
 #include "editcharacterdialog.h"
 #include "loadiconfromfiles.h"
 #include "usedfiltermodel.h"
@@ -63,7 +64,8 @@ void SelectCharacter::writeToFile() {
 }
 
 void SelectCharacter::editAbilities() {
-    qDebug() << "editing abilities";
+    EditAbilitiesDialog dialog(m_model, this);
+    dialog.exec();
 }
 
 void SelectCharacter::deleteCharacter() {

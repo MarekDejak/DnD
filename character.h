@@ -19,6 +19,11 @@ public:
 
     void setAbility(QString name, int value) { m_abilities[name] = value; };
     int getAbility(QString name) const { return m_abilities.at(name); };
+    void editAbility(QString from, QString to) {
+        auto handler = m_abilities.extract(from);
+        handler.key() = to;
+        m_abilities.insert(std::move(handler));
+    }
 
     void setRace(QString race) { m_race = race; }
     QString getRace() const { return m_race; }

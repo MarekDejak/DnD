@@ -37,6 +37,8 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
     charactermodel.h
     createcharacter.cpp
     createcharacter.h
+    editabilitiesdialog.cpp
+    editabilitiesdialog.h
     editcharacterdialog.cpp
     editcharacterdialog.h
     loadiconfromfiles.cpp
@@ -58,6 +60,8 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
     selectcharacter.cpp
     selectcharacter.h
     selectcharacter.ui
+    skillsproxymodel.cpp
+    skillsproxymodel.h
     usedfiltermodel.cpp
     usedfiltermodel.h
   )

@@ -27,7 +27,11 @@ public:
 
     void setFile(QString fileName);
 
-    enum Roles { CharacterRole = Qt::UserRole, UsedRole, PawnImageRole, ButtonImageRole };
+    void editSkill(QString from, QString to);
+    void addSkill(QString skill);
+    void removeSkill(QString skill);
+
+    enum Roles { CharacterRole = Qt::UserRole, UsedRole, PawnImageRole, ButtonImageRole, SkillsRole };
     enum FixedColumns { NameColumn = 0, RaceColumn, ProfColumn, FixedColumnCount };
 public slots:
     void writeDataFile();
