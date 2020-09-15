@@ -4,18 +4,19 @@
 
 #include <QDialog>
 #include <QFormLayout>
+#include <QPixmap>
 
 class Card : public QDialog {
 public:
-    Card(Character* character, QWidget* parent);
+    Card(QPixmap* pixmap, Character* character, QWidget* parent);
 
 private:
-    void generateFixedLayout(QFormLayout* layout);
+    void generateFixedLayout();
     void populateLayout();
     void manageOpenDialogs();
     void setupTitleAndGeometry();
 
-    bool m_editable;
     Character* m_character;
+    QPixmap* m_characterPortrait;
     static QVector<Character*> m_openCharacters;
 };

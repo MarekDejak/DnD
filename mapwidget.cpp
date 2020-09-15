@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QVector>
 #include <QListView>
+#include <QPixmap>
 
 MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), m_model(model) {
     connect(m_model, &QAbstractItemModel::dataChanged, this, &MapWidget::onDataChanged);
@@ -24,7 +25,7 @@ MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), 
     m_verticalLayout->addWidget(stopGame);
 
     m_mapa = new Mapa(this);
-    horizontalLayout->addWidget(m_mapa);  // layout glowny (poziomy)
+    horizontalLayout->addWidget(m_mapa);
     horizontalLayout->addLayout(m_verticalLayout);
     setLayout(horizontalLayout);
 
@@ -33,7 +34,11 @@ MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), 
 
 void MapWidget::onPrzyciskClicked(const QModelIndex& index) {
     auto* character = m_model->data(index, CharacterModel::CharacterRole).value<Character*>();
-    new Card(character, this);
+    //    auto* image = new QPixmap;
+    auto image = m_model->data(index, CharacterModel::ButtonImageRole).value<QPixmap>();  // brzydko. jak poprawic?
+    auto* characterPortrait = &image;
+
+    new Card(characterPortrait, character, this);
 }
 
 void MapWidget::onDataChanged() {

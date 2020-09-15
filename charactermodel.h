@@ -9,6 +9,8 @@
 const QString nameLabel = "Name";
 const QString raceLabel = "Race";
 const QString professionLabel = "Profession";
+const QString attributesLabel = "Attributes";
+const QString skillsLabel = "Skills";
 
 class CharacterModel : public QAbstractTableModel {
     Q_OBJECT
