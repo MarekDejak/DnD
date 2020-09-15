@@ -1,48 +1,21 @@
 #pragma once
-#include "CharacterInfo.h"
-#include "Ptaszki.h"
+
+#include "character.h"
 
 #include <QDialog>
-#include <QVector>
-#include <QCheckBox>
-#include <unordered_set>
-#include <set>
+#include <QFormLayout>
 
-
-namespace Ui {
-class Card;
-}
-
-class Card : public QDialog
-{
-    Q_OBJECT
-
+class Card : public QDialog {
 public:
-    explicit Card(QWidget *parent = nullptr);
-    void setCharacterInfo(CharacterInfo info);
-    void setName(QString imie);
-    void setPtaszki(Ptaszki ptaszki);
-
-    Ptaszki getPtaszki();//bylo na koncu const
-
-    ~Card();
+    Card(Character* character, QWidget* parent);
 
 private:
-    Ui::Card *ui;
-    QVector<Player> m_characters;
-    QVector<QString> m_chosenCharacters;
-    QString m_name;
-    Ptaszki m_ptaszki;
+    void generateFixedLayout(QFormLayout* layout);
+    void populateLayout();
+    void manageOpenDialogs();
+    void setupTitleAndGeometry();
 
-    std::set<QCheckBox*> m_setPtaszkow;
-    std::set<QString> m_setNazwSkilli;
-
-    void reloadCardInfo(QVector<Player> cardInfo);
-
-
-
-
-    void onCloseClicked();
-    void onLvlUpClicked();
+    bool m_editable;
+    Character* m_character;
+    static QVector<Character*> m_openCharacters;
 };
-

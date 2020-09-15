@@ -33,11 +33,7 @@ MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), 
 
 void MapWidget::onPrzyciskClicked(const QModelIndex& index) {
     auto* character = m_model->data(index, CharacterModel::CharacterRole).value<Character*>();
-    new EditCharacterDialog(false, character, this);
-}
-
-void MapWidget::setPtaszki(Ptaszki input) {
-    m_ptaszki = input;
+    new Card(character, this);
 }
 
 void MapWidget::onDataChanged() {
