@@ -186,7 +186,8 @@ QVariant CharacterModel::data(const QModelIndex& index, int role) const {
         return QVariant::fromValue(m_characters.at(index.row()));
     } else if (role == UsedRole) {
         return m_characters.at(index.row())->used();
-    } else if (role == ButtonImageRole) {
+    } else if (role ==
+               ButtonImageRole) {  // zebrac w PortraitImageRole, wyrzucic skalowanie, zastowowac do Button i Card
         const QString name = m_characters.at(index.row())->name().replace(" ", "");
         return QPixmap(buttonImagePath.arg(name)).scaledToHeight(buttonImageHeight, Qt::SmoothTransformation);
     } else if (role == PawnImageRole) {

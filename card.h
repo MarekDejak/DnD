@@ -12,9 +12,9 @@ public:
 
 private:
     void generateFixedLayout();
-    void populateLayout();
     void manageOpenDialogs();
     void setupTitleAndGeometry();
+    void populateSkillLayouts(QGridLayout* gridLayout);
 
     Character* m_character;
     QPixmap* m_characterPortrait;

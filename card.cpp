@@ -6,7 +6,6 @@
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QFormLayout>
-#include <map>
 
 #include "charactermodel.h"
 
@@ -64,6 +63,12 @@ void Card::generateFixedLayout() {
         "Showcard Gothic");
     gridLayout->addWidget(skillsL, 2, 0);
 
+    populateSkillLayouts(gridLayout);  //
+
+    setLayout(gridLayout);
+}
+
+void Card::populateSkillLayouts(QGridLayout* gridLayout) {
     auto* skillsLayoutFirst = new QFormLayout(this);
     auto allAbilities = m_character->getAllAbilities();
 
@@ -90,32 +95,6 @@ void Card::generateFixedLayout() {
         it++;
     } while (it != allAbilities.end());
     gridLayout->addLayout(skillsLayoutSecond, 3, 1);
-
-    setLayout(gridLayout);
-}
-
-void Card::populateLayout() {
-    auto* formLayout = new QFormLayout(this);
-
-    for (const auto [ability, value] : m_character->getAllAbilities()) {
-        auto* abilityNameLabel = new QLabel(this);
-        abilityNameLabel->setStyleSheet(
-            "color: rgb(255, 255, 127); font: 12pt "
-            "Cooper Black");
-        abilityNameLabel->setText(ability);
-
-        auto* valueLabel = new QLabel(this);
-        valueLabel->setStyleSheet(
-            "color: rgb(255, 255, 127); font: 12pt "
-            "Cooper Black");
-        valueLabel->setText(QString::number(value));
-
-        formLayout->addRow(abilityNameLabel, valueLabel);
-    }
-
-    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok, this);
-    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
-    formLayout->addWidget(buttonBox);
 }
 
 void Card::setupTitleAndGeometry() {
