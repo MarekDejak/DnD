@@ -3,7 +3,6 @@
 #include <QTextStream>
 #include <QWidget>
 
-static const int buttonImageHeight = 100;
 static const QString buttonImagePath = "images/%1_button.png";
 static const QString pawnImagePath = "images/%1_pawn.png";
 static const QString incorrectFileFormat = "Incorrect file format";
@@ -189,7 +188,7 @@ QVariant CharacterModel::data(const QModelIndex& index, int role) const {
     } else if (role ==
                ButtonImageRole) {  // zebrac w PortraitImageRole, wyrzucic skalowanie, zastowowac do Button i Card
         const QString name = m_characters.at(index.row())->name().replace(" ", "");
-        return QPixmap(buttonImagePath.arg(name)).scaledToHeight(buttonImageHeight, Qt::SmoothTransformation);
+        return QPixmap(buttonImagePath.arg(name));
     } else if (role == PawnImageRole) {
         const QString name = m_characters.at(index.row())->name().replace(" ", "");
         return QPixmap(pawnImagePath.arg(name)).scaledToHeight(70, Qt::SmoothTransformation);

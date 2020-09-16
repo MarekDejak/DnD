@@ -12,9 +12,11 @@
 QVector<Character*> Card::m_openCharacters = {};
 static QVector<QString> abilityNames = {"Sila",         "Zwinnosc",  "Szybkosc", "Wytrzymalosc",
                                         "Inteligencja", "Osobowosc", "Szczescie"};
+static int portraitImageHeight = 200;
 
-Card::Card(QPixmap* pixmap, Character* character, QWidget* parent)
-    : QDialog(parent), m_character(character), m_characterPortrait(pixmap) {
+Card::Card(QPixmap* pixmap, Character* character, QWidget* parent) : QDialog(parent), m_character(character) {
+    auto characterPortrait = *pixmap;
+    m_characterPortrait = characterPortrait.scaledToHeight(portraitImageHeight, Qt::SmoothTransformation);
     setStyleSheet(
         "color: black; font: 12pt "
         "Cooper Black");
@@ -58,7 +60,7 @@ void Card::generateFixedLayout() {
 
     gridLayout->addLayout(verticalLayout, 1, 0);
     auto* characterImage = new QLabel(this);
-    characterImage->setPixmap(*m_characterPortrait);  //
+    characterImage->setPixmap(m_characterPortrait);
     gridLayout->addWidget(characterImage, 1, 1, 1, 2, Qt::AlignCenter);
 
     auto* skillsL = new QLabel;
@@ -68,7 +70,7 @@ void Card::generateFixedLayout() {
         "Showcard Gothic");
     gridLayout->addWidget(skillsL, 2, 0);
 
-    populateSkillLayouts(gridLayout, attributesFormLayout);  //
+    populateSkillLayouts(gridLayout, attributesFormLayout);
 
     setLayout(gridLayout);
 }
@@ -76,7 +78,7 @@ void Card::populateSkillLayouts(QGridLayout* gridLayout, QFormLayout* attributes
     auto* skillsLayoutFirst = new QFormLayout(this);
     auto allAbilities = m_character->getAllAbilities();
 
-    for (auto [key, value] : allAbilities) {  // crash
+    for (auto [key, value] : allAbilities) {
         if (abilityNames.contains(key)) {
             auto* attributeNameLabel = new QLabel(this);
             attributeNameLabel->setText(key);

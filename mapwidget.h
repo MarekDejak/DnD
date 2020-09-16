@@ -11,6 +11,7 @@
 #include <QString>
 #include <QMap>
 #include <unordered_map>
+#include <QPixmap>
 
 class MapWidget : public QWidget {
     Q_OBJECT
@@ -23,6 +24,7 @@ signals:
 
 private:
     void onDataChanged();
+    void getPawnIcons();
 
     QVector<QPushButton*> m_buttons;
     CharacterModel* m_model;
@@ -30,6 +32,7 @@ private:
     Mapa* m_mapa;
     CharacterInfo m_info;
     QVector<QString> m_openCards;
+    QPixmap* m_pawnImage;
 
 private slots:
     void onPrzyciskClicked(const QModelIndex& imie);

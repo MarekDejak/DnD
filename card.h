@@ -17,6 +17,6 @@ private:
     void populateSkillLayouts(QGridLayout* gridLayout, QFormLayout* attributesLayout);
 
     Character* m_character;
-    QPixmap* m_characterPortrait;
+    QPixmap m_characterPortrait;
     static QVector<Character*> m_openCharacters;
 };

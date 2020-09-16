@@ -9,6 +9,8 @@
 #include <QListView>
 #include <QPixmap>
 
+static const int buttonImageHeight = 100;
+
 MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), m_model(model) {
     connect(m_model, &QAbstractItemModel::dataChanged, this, &MapWidget::onDataChanged);
 
@@ -25,6 +27,7 @@ MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), 
     m_verticalLayout->addWidget(stopGame);
 
     m_mapa = new Mapa(this);
+    m_mapa->setCharacterModel(m_model);
     horizontalLayout->addWidget(m_mapa);
     horizontalLayout->addLayout(m_verticalLayout);
     setLayout(horizontalLayout);
@@ -34,8 +37,7 @@ MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), 
 
 void MapWidget::onPrzyciskClicked(const QModelIndex& index) {
     auto* character = m_model->data(index, CharacterModel::CharacterRole).value<Character*>();
-    //    auto* image = new QPixmap;
-    auto image = m_model->data(index, CharacterModel::ButtonImageRole).value<QPixmap>();  // brzydko. jak poprawic?
+    auto image = m_model->data(index, CharacterModel::ButtonImageRole).value<QPixmap>();
     auto* characterPortrait = &image;
 
     new Card(characterPortrait, character, this);
@@ -51,7 +53,9 @@ void MapWidget::onDataChanged() {
         if (m_model->data(m_model->index(i, 0), CharacterModel::UsedRole).toBool()) {
             const QString name = m_model->data(m_model->index(i, 0)).toString();
             QPushButton* button = new QPushButton(this);
-            const auto pixmap = m_model->data(m_model->index(i, 0), CharacterModel::ButtonImageRole).value<QPixmap>();
+            const auto pixmap = m_model->data(m_model->index(i, 0), CharacterModel::ButtonImageRole)
+                                    .value<QPixmap>()
+                                    .scaledToHeight(buttonImageHeight, Qt::SmoothTransformation);
             if (!pixmap.isNull()) {
                 button->setIconSize(pixmap.rect().size());
                 button->setIcon(pixmap);
