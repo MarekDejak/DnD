@@ -14,7 +14,7 @@ private:
     void generateFixedLayout();
     void manageOpenDialogs();
     void setupTitleAndGeometry();
-    void populateSkillLayouts(QGridLayout* gridLayout);
+    void populateSkillLayouts(QGridLayout* gridLayout, QFormLayout* attributesLayout);
 
     Character* m_character;
     QPixmap* m_characterPortrait;

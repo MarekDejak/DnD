@@ -10,6 +10,8 @@
 #include "charactermodel.h"
 
 QVector<Character*> Card::m_openCharacters = {};
+static QVector<QString> abilityNames = {"Sila",         "Zwinnosc",  "Szybkosc", "Wytrzymalosc",
+                                        "Inteligencja", "Osobowosc", "Szczescie"};
 
 Card::Card(QPixmap* pixmap, Character* character, QWidget* parent)
     : QDialog(parent), m_character(character), m_characterPortrait(pixmap) {
@@ -51,6 +53,9 @@ void Card::generateFixedLayout() {
         "Showcard Gothic");
     verticalLayout->addWidget(attributesL);
 
+    auto* attributesFormLayout = new QFormLayout(this);
+    verticalLayout->addLayout(attributesFormLayout);
+
     gridLayout->addLayout(verticalLayout, 1, 0);
     auto* characterImage = new QLabel(this);
     characterImage->setPixmap(*m_characterPortrait);  //
@@ -63,14 +68,25 @@ void Card::generateFixedLayout() {
         "Showcard Gothic");
     gridLayout->addWidget(skillsL, 2, 0);
 
-    populateSkillLayouts(gridLayout);  //
+    populateSkillLayouts(gridLayout, attributesFormLayout);  //
 
     setLayout(gridLayout);
 }
-
-void Card::populateSkillLayouts(QGridLayout* gridLayout) {
+void Card::populateSkillLayouts(QGridLayout* gridLayout, QFormLayout* attributesLayout) {
     auto* skillsLayoutFirst = new QFormLayout(this);
     auto allAbilities = m_character->getAllAbilities();
+
+    for (auto [key, value] : allAbilities) {  // crash
+        if (abilityNames.contains(key)) {
+            auto* attributeNameLabel = new QLabel(this);
+            attributeNameLabel->setText(key);
+            auto* valueLabel = new QLabel(this);
+            valueLabel->setText(QString::number(value));
+            allAbilities.erase(allAbilities.find(key));
+
+            attributesLayout->addRow(attributeNameLabel, valueLabel);
+        }
+    }
 
     int skillsRowsInForm = allAbilities.size() / 2 + 1;
 
