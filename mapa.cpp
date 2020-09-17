@@ -8,8 +8,9 @@
 Mapa::Mapa(QWidget* parent) : QFrame(parent) {
     setStyleSheet("background-image: url(:/images/images/background.png);");
 
-    QPixmap background(":/images/images/background.png");  // wczytane tylko do ustalenia wymiarow okna
+    QPixmap background(":/images/images/background.png");
     setMinimumSize(background.width(), background.height());
+    backgroundImageHeight = background.height();
     setFrameStyle(QFrame::Sunken | QFrame::StyledPanel);
     setAcceptDrops(true);
 }
@@ -72,7 +73,7 @@ void Mapa::mousePressEvent(QMouseEvent* event) {
     if (!child)
         return;
 
-    QPixmap pixmap = *(child->pixmap());
+    QPixmap pixmap = child->pixmap(Qt::ReturnByValueConstant::ReturnByValue);
 
     QByteArray itemData;
     QDataStream dataStream(&itemData, QIODevice::WriteOnly);
@@ -99,24 +100,26 @@ void Mapa::mousePressEvent(QMouseEvent* event) {
     }
 }
 
-void Mapa::setCharacterInfo(CharacterInfo info) {
-    m_info = info;
-    makePionki();
+void Mapa::setCharacterModel(CharacterModel* model) {
+    m_model = model;
+    connect(m_model, &QAbstractItemModel::dataChanged, this, &Mapa::onDataChanged);
 }
+void Mapa::onDataChanged() {
+    for (auto* child : children()) {
+        child->deleteLater();
+    }
+    m_pawns.clear();
 
-void Mapa::makePionki() {
-    for (int i = 0; i < m_info.amtOfPlayers; i++) {
-        QString imie = m_info.chosenCharacters[i];
-
-        for (int j = 0; j < m_info.amtOfCharacters; j++) {
-            if (imie == m_info.characters[j].getName()) {
-                QLabel* pionek1 = new QLabel(this);
-                QPixmap pixmap1(m_info.characters[j].getPathPionek());
-                pionek1->setPixmap(pixmap1.scaledToHeight(50, Qt::SmoothTransformation));
-                pionek1->move(10, 10 + 55 * i);
-                pionek1->show();
-                pionek1->setAttribute(Qt::WA_DeleteOnClose);
-            }
+    int numOfPlayers = 0;
+    for (int i = 0; i < m_model->rowCount(); i++) {
+        if (m_model->data(m_model->index(i, 0), CharacterModel::UsedRole).toBool()) {
+            QPixmap pixmap = m_model->data(m_model->index(i, 0), CharacterModel::PawnImageRole).value<QPixmap>();
+            auto* pawn = new QLabel(this);
+            pawn->setPixmap(pixmap.scaledToHeight(50, Qt::SmoothTransformation));
+            pawn->move(10, 10 + 55 * numOfPlayers);
+            pawn->show();
+            m_pawns.push_back(pawn);
+            numOfPlayers++;
         }
     }
 }

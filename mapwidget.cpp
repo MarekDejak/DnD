@@ -40,6 +40,19 @@ void MapWidget::onPrzyciskClicked(const QModelIndex& index) {
 
     new Card(characterPortrait, character, this);
 }
+int MapWidget::calculateButtonImageHeight() {
+    int amtOfPlayer = 0;
+    for (int i = 0; i < m_model->rowCount(); i++) {
+        if (m_model->data(m_model->index(i, 0), CharacterModel::UsedRole).toBool()) {
+            amtOfPlayer++;
+        }
+    }
+    if (amtOfPlayer < 5) {
+        return (m_mapa->getBackgroundHeight() / 5);
+    } else {
+        return (m_mapa->getBackgroundHeight() / amtOfPlayer) - 20;
+    }
+};
 
 void MapWidget::onDataChanged() {
     for (auto* button : m_buttons) {
@@ -51,7 +64,9 @@ void MapWidget::onDataChanged() {
         if (m_model->data(m_model->index(i, 0), CharacterModel::UsedRole).toBool()) {
             const QString name = m_model->data(m_model->index(i, 0)).toString();
             QPushButton* button = new QPushButton(this);
-            const auto pixmap = m_model->data(m_model->index(i, 0), CharacterModel::ButtonImageRole).value<QPixmap>();
+            const auto pixmap = m_model->data(m_model->index(i, 0), CharacterModel::ButtonImageRole)
+                                    .value<QPixmap>()
+                                    .scaledToHeight(calculateButtonImageHeight(), Qt::SmoothTransformation);
             if (!pixmap.isNull()) {
                 button->setIconSize(pixmap.rect().size());
                 button->setIcon(pixmap);
