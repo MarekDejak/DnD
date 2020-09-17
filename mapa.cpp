@@ -106,10 +106,8 @@ void Mapa::setCharacterModel(CharacterModel* model) {
     createPawns();
 }
 void Mapa::onDataChanged() {
-    for (auto* pawn : m_pawns) {
-        //            m_verticalLayout->removeWidget(button);
-        pawn->hide();
-        delete pawn;
+    for (auto* child : children()) {
+        child->deleteLater();
     }
     m_pawns.clear();
 
