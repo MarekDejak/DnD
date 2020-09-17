@@ -72,7 +72,7 @@ void Mapa::mousePressEvent(QMouseEvent* event) {
     if (!child)
         return;
 
-    QPixmap pixmap = *(child->pixmap());
+    QPixmap pixmap = child->pixmap(Qt::ReturnByValueConstant::ReturnByValue);
 
     QByteArray itemData;
     QDataStream dataStream(&itemData, QIODevice::WriteOnly);
