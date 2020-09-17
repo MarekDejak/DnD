@@ -29,6 +29,11 @@ void EditCharacterDialog::generateFixedLayout(QFormLayout* formLayout) {
     auto* professionEdit = new QLineEdit(this);
     professionEdit->setText(m_character->getProfession());
     formLayout->addRow(professionLabel, professionEdit);
+
+    connect(nameEdit, &QLineEdit::editingFinished, this, [=]() { m_character->setName(nameEdit->text()); });
+    connect(professionEdit, &QLineEdit::editingFinished, this,
+            [=]() { m_character->setProfession(professionEdit->text()); });
+    connect(raceEdit, &QLineEdit::editingFinished, this, [=]() { m_character->setRace(raceEdit->text()); });
 }
 
 void EditCharacterDialog::populateLayout() {
