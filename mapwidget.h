@@ -23,6 +23,7 @@ signals:
 
 private:
     void onDataChanged();
+    int calculateButtonImageHeight();
 
     QVector<QPushButton*> m_buttons;
     CharacterModel* m_model;
