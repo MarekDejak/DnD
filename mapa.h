@@ -4,6 +4,8 @@
 #include <QFrame>
 #include <QVector>
 #include <QLabel>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 
 QT_BEGIN_NAMESPACE
 class QDragEnterEvent;
@@ -12,23 +14,18 @@ QT_END_NAMESPACE
 
 class Mapa : public QFrame {
 public:
-    explicit Mapa(QWidget* parent = nullptr);
-    void setCharacterModel(CharacterModel* model);
-    int getBackgroundHeight() { return backgroundImageHeight; }
+    explicit Mapa(CharacterModel* model, QWidget* parent = nullptr);
+    int getBackgroundHeight() { return m_backgroundImageHeight; }
 
 signals:
     void clicked();
 
 private:
     void onDataChanged();
-    QVector<QLabel*> m_pawns;
-    int backgroundImageHeight;
+    int m_backgroundImageHeight;
+    QGraphicsScene* m_scene;
+    QVector<QGraphicsPixmapItem*> m_pawns;
 
 protected:
-    void dragEnterEvent(QDragEnterEvent* event) override;
-    void dragMoveEvent(QDragMoveEvent* event) override;
-    void dropEvent(QDropEvent* event) override;
-    void mousePressEvent(QMouseEvent* event) override;
-
     CharacterModel* m_model;
 };

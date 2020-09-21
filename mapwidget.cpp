@@ -24,7 +24,7 @@ MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), 
     m_verticalLayout->addWidget(buttonPoint);
     m_verticalLayout->addWidget(stopGame);
 
-    m_mapa = new Mapa(this);
+    m_mapa = new Mapa(m_model, this);
     horizontalLayout->addWidget(m_mapa);
     horizontalLayout->addLayout(m_verticalLayout);
     setLayout(horizontalLayout);
