@@ -5,6 +5,8 @@
 #include "mapa.h"
 #include "selectcharacter.h"
 
+int pawnHeight = 50;
+
 Mapa::Mapa(QWidget* parent) : QFrame(parent) {
     setStyleSheet("background-image: url(:/images/images/background.png);");
 
@@ -115,8 +117,8 @@ void Mapa::onDataChanged() {
         if (m_model->data(m_model->index(i, 0), CharacterModel::UsedRole).toBool()) {
             QPixmap pixmap = m_model->data(m_model->index(i, 0), CharacterModel::PawnImageRole).value<QPixmap>();
             auto* pawn = new QLabel(this);
-            pawn->setPixmap(pixmap.scaledToHeight(50, Qt::SmoothTransformation));
-            pawn->move(10, 10 + 55 * numOfPlayers);
+            pawn->setPixmap(pixmap.scaledToHeight(pawnHeight, Qt::SmoothTransformation));
+            pawn->move(10, 10 + pawnHeight * numOfPlayers);
             pawn->show();
             m_pawns.push_back(pawn);
             numOfPlayers++;
