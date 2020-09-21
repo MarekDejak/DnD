@@ -9,7 +9,6 @@
 #include "mapa.h"
 #include "selectcharacter.h"
 
-
 static int pawnHeight = 50;
 
 Mapa::Mapa(CharacterModel* model, QWidget* parent) : QFrame(parent), m_model(model) {
@@ -49,7 +48,6 @@ void Mapa::onDataChanged() {
             pawn->setFlags(QGraphicsItem::ItemIsMovable);
             pawn->setZValue(1);
             m_scene->addItem(pawn);
->>>>>>> d60e639... rewrite mapa.cpp to use QGraphicsView, remove unused .cpp and .h files, add pawns and buttons to resources
             m_pawns.push_back(pawn);
             amountOfPlayers++;
         }
