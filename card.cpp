@@ -14,9 +14,8 @@ static QVector<QString> abilityNames = {"Sila",         "Zwinnosc",  "Szybkosc",
                                         "Inteligencja", "Osobowosc", "Szczescie"};
 static int portraitImageHeight = 200;
 
-Card::Card(QPixmap* pixmap, Character* character, QWidget* parent) : QDialog(parent), m_character(character) {
-    auto characterPortrait = *pixmap;
-    m_characterPortrait = characterPortrait.scaledToHeight(portraitImageHeight, Qt::SmoothTransformation);
+Card::Card(QPixmap pixmap, Character* character, QWidget* parent)
+    : QDialog(parent), m_character(character), m_characterPortrait(pixmap) {
     setStyleSheet(
         "color: black; font: 12pt "
         "Cooper Black");

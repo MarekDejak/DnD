@@ -8,6 +8,25 @@
         <file>images/bomba.jpg</file>
         <file>images/background.png</file>
         <file>images/tlo1.jpg</file>
+        <file>images/donvasyl_button.png</file>
+        <file>images/donvasyl_pawn.png</file>
+        <file>images/duszan_button.png</file>
+        <file>images/duszan_pawn.png</file>
+        <file>images/edek_button.png</file>
+        <file>images/edek_pawn.png</file>
+        <file>images/japa_button.png</file>
+        <file>images/japa_pawn.png</file>
+        <file>images/kacper_button.png</file>
+        <file>images/kacper_pawn.png</file>
+        <file>images/kuba_button.png</file>
+        <file>images/kuba_pawn.png</file>
+        <file>images/kurvinox_button.png</file>
+        <file>images/kurvinox_pawn.png</file>
+        <file>images/maria_button.png</file>
+        <file>images/maria_pawn.png</file>
+        <file>images/ojciecpio_button.png</file>
+        <file>images/ojciecpio_pawn.png</file>
+        <file>images/map_pointer.png</file>
     </qresource>
     <qresource prefix="/icons">
     <file alias="simple_arrow_left_green_16_d.png">icons/simple_arrow_left_green/simple_arrow_left_green_16_d.png</file>

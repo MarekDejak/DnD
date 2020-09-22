@@ -24,7 +24,8 @@ signals:
 
 private:
     void onDataChanged();
-    void getPawnIcons();
+    void waypointClicked();
+    int calculateButtonImageHeight();
 
     QVector<QPushButton*> m_buttons;
     CharacterModel* m_model;

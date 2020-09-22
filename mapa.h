@@ -1,6 +1,6 @@
 #pragma once
 
-#include "charactermodel.h"
+#include "Charactermodel.h"
 #include <QFrame>
 #include <QVector>
 #include <QLabel>
@@ -12,12 +12,12 @@ QT_END_NAMESPACE
 
 class Mapa : public QFrame {
 public:
-    explicit Mapa(QWidget* parent = nullptr);
-    void createPawns();
-    void setCharacterModel(CharacterModel* model);
+    explicit Mapa(CharacterModel* model, QWidget* parent = nullptr);
+    int getBackgroundHeight() { return m_backgroundImageHeight; }
+    void createPin(QColor color, QString text);
 
 signals:
-    void clicked();  //
+    void clicked();
 
 private:
     void onDataChanged();

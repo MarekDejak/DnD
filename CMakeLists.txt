@@ -35,17 +35,15 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
     characterinfo.h
     charactermodel.cpp
     charactermodel.h
-    createcharacter.cpp
-    createcharacter.h
     editabilitiesdialog.cpp
     editabilitiesdialog.h
     editcharacterdialog.cpp
     editcharacterdialog.h
     loadiconfromfiles.cpp
     loadiconfromfiles.h
-    lvl.cpp
-    lvl.h
-    lvl.ui
+    waypointdialog.cpp
+    waypointdialog.h
+    waypointdialog.ui
     main.cpp
     mainwindow.cpp
     mainwindow.h
@@ -53,9 +51,6 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
     mapa.h
     mapwidget.cpp
     mapwidget.h
-    player.cpp
-    player.h
-    ptaszki.h
     resources.qrc
     selectcharacter.cpp
     selectcharacter.h

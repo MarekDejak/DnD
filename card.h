@@ -8,7 +8,7 @@
 
 class Card : public QDialog {
 public:
-    Card(QPixmap* pixmap, Character* character, QWidget* parent);
+    Card(QPixmap pixmap, Character* character, QWidget* parent);
 
 private:
     void generateFixedLayout();
