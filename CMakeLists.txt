@@ -41,6 +41,9 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
     editcharacterdialog.h
     loadiconfromfiles.cpp
     loadiconfromfiles.h
+    waypointdialog.cpp
+    waypointdialog.h
+    waypointdialog.ui
     main.cpp
     mainwindow.cpp
     mainwindow.h

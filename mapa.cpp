@@ -5,6 +5,8 @@
 #include <QGraphicsView>
 #include <QVBoxLayout>
 #include <QImage>
+#include <QGraphicsItemGroup>
+#include <QPalette>
 
 #include "mapa.h"
 #include "selectcharacter.h"
@@ -24,11 +26,29 @@ Mapa::Mapa(CharacterModel* model, QWidget* parent) : QFrame(parent), m_model(mod
     m_backgroundImageHeight = backgroundPix.height();
     QGraphicsPixmapItem* background = m_scene->addPixmap(backgroundPix);
     background->setZValue(0);
-    m_scene->addItem(background);
 
     QVBoxLayout* layout = new QVBoxLayout;
     layout->addWidget(view);
     setLayout(layout);
+}
+void Mapa::createPin(QColor color, QString text) {
+    auto pixmap = new QPixmap(":/images/images/map_pointer.png");
+    QGraphicsPixmapItem* znacznik = m_scene->addPixmap(pixmap->scaledToHeight(30, Qt::SmoothTransformation));
+    QFont font("Cooper Black", 15, QFont::Thin);
+    font.setCapitalization(QFont::Capitalize);
+    auto* tekst = new QGraphicsTextItem(text);
+    tekst->setFont(font);
+    tekst->setDefaultTextColor(color);
+
+    auto* grupa = new QGraphicsItemGroup;
+    grupa->addToGroup(znacznik);
+    grupa->addToGroup(tekst);
+    tekst->moveBy(20, -10);
+
+    grupa->setFlags(QGraphicsItem::ItemIsMovable);
+    grupa->setZValue(2);
+    grupa->moveBy(10, 10);
+    m_scene->addItem(grupa);
 }
 
 void Mapa::onDataChanged() {

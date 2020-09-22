@@ -26,6 +26,7 @@
         <file>images/maria_pawn.png</file>
         <file>images/ojciecpio_button.png</file>
         <file>images/ojciecpio_pawn.png</file>
+        <file>images/map_pointer.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file alias="simple_arrow_left_green_16_d.png">icons/simple_arrow_left_green/simple_arrow_left_green_16_d.png</file>

@@ -11,7 +11,7 @@
 
 QVector<Character*> Card::m_openCharacters = {};
 
-Card::Card(QPixmap* pixmap, Character* character, QWidget* parent)
+Card::Card(QPixmap pixmap, Character* character, QWidget* parent)
     : QDialog(parent), m_character(character), m_characterPortrait(pixmap) {
     setStyleSheet(
         "color: black; font: 12pt "
@@ -53,7 +53,7 @@ void Card::generateFixedLayout() {
 
     gridLayout->addLayout(verticalLayout, 1, 0);
     auto* characterImage = new QLabel(this);
-    characterImage->setPixmap(*m_characterPortrait);  //
+    characterImage->setPixmap(m_characterPortrait);  //
     gridLayout->addWidget(characterImage, 1, 1, 1, 2, Qt::AlignCenter);
 
     auto* skillsL = new QLabel;

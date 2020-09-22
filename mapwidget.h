@@ -23,6 +23,7 @@ signals:
 
 private:
     void onDataChanged();
+    void waypointClicked();
     int calculateButtonImageHeight();
 
     QVector<QPushButton*> m_buttons;

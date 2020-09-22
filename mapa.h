@@ -16,6 +16,7 @@ class Mapa : public QFrame {
 public:
     explicit Mapa(CharacterModel* model, QWidget* parent = nullptr);
     int getBackgroundHeight() { return m_backgroundImageHeight; }
+    void createPin(QColor color, QString text);
 
 signals:
     void clicked();

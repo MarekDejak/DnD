@@ -2,6 +2,7 @@
 
 #include "loadiconfromfiles.h"
 #include "editcharacterdialog.h"
+#include <waypointdialog.h>
 
 #include <QVBoxLayout>
 #include <QDebug>
@@ -15,13 +16,14 @@ MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), 
     QHBoxLayout* horizontalLayout = new QHBoxLayout(this);
     m_verticalLayout = new QVBoxLayout(this);
 
-    QPushButton* buttonPoint = new QPushButton("Znacznik", this);
+    QPushButton* waypoint = new QPushButton("Znacznik", this);
     QPushButton* stopGame = new QPushButton("Stop game", this);
     stopGame->setIcon(loadIconFromFiles(":/icons/stop_%1_%2.png"));
 
     connect(stopGame, &QPushButton::pressed, this, &MapWidget::stopPressed);
+    connect(waypoint, &QPushButton::pressed, this, &MapWidget::waypointClicked);
 
-    m_verticalLayout->addWidget(buttonPoint);
+    m_verticalLayout->addWidget(waypoint);
     m_verticalLayout->addWidget(stopGame);
 
     m_mapa = new Mapa(m_model, this);
@@ -32,13 +34,19 @@ MapWidget::MapWidget(CharacterModel* model, QWidget* parent) : QWidget(parent), 
     this->setWindowTitle("Mapa");
 }
 
+void MapWidget::waypointClicked() {
+    WaypointDialog waypointDialog(this);
+    waypointDialog.setWindowTitle("Znacznik");
+    if (waypointDialog.exec() == QDialog::Accepted) {
+        m_mapa->createPin(waypointDialog.color(), waypointDialog.text());
+    }
+}
+
 void MapWidget::onPrzyciskClicked(const QModelIndex& index) {
     auto* character = m_model->data(index, CharacterModel::CharacterRole).value<Character*>();
-    //    auto* image = new QPixmap;
-    auto image = m_model->data(index, CharacterModel::ButtonImageRole).value<QPixmap>();  // brzydko. jak poprawic?
-    auto* characterPortrait = &image;
+    auto image = m_model->data(index, CharacterModel::ButtonImageRole).value<QPixmap>();
 
-    new Card(characterPortrait, character, this);
+    new Card(image, character, this);
 }
 int MapWidget::calculateButtonImageHeight() {
     int amtOfPlayer = 0;
